@@ -1,0 +1,46 @@
+TABLE OF CONTENT
+•	How to scroll down to the bottom of the page in Selenium using Java
+•	How to scroll by the visibility of WebElement on the page in Selenium using Java
+•	How to scroll down in a page by specified pixels in Selenium using Java
+•	How to scroll the page to the left in a horizontal direction using Selenium Java
+•	How to scroll the page to the right in the horizontal direction using Selenium Java
+•	How to scroll a webpage in horizontal and vertical directions in Selenium using Java
+•	How to scroll the scroll bar on a page using Selenium Java
+•	How to scroll a webpage in horizontal and vertical directions in Selenium using Java
+•	How to scroll a webpage having infinite scrolling in Selenium using Java
+•	How to Scroll to the top of the page in Selenium using Java
+•	How to do scroll horizontally to a specific element on a page in Selenium using Java
+
+syntax of JavaScriptExecutor for Selenium:
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript(Script,Arguments);
+
+
+
+1.How to scroll down to the bottom of the page in Selenium using Java:
+Syntax: js.executeScript("window.scrollTo(0, document.body.scrollHeight)"); 
+
+public class scrolling_bottomofthe_page {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","D:\\selenium\\drivers\\Chromedriver_103\\chromedriver_win32\\chromedriver.exe" );
+		  ChromeDriver driver=new ChromeDriver();
+		  driver.get("https://opensource-demo.orangehrmlive.com");
+		  driver.manage().window().maximize();
+		  //Login page
+		  WebElement uname=driver.findElementByName("txtUsername");
+		  uname.sendKeys("Admin");
+		  WebElement upassword=driver.findElementByName("txtPassword");
+		  upassword.sendKeys("admin123");
+		  WebElement lgbt=driver.findElementByName("Submit");
+		  lgbt.click();
+		  
+		  JavascriptExecutor js=(JavascriptExecutor)driver;
+		  
+		  js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
+	}
+
+}
+
+2.
